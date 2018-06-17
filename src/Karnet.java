@@ -46,6 +46,6 @@ public class Karnet {
     int i = 0;
     @Override
     public String toString() {
-        return name +", "+months;
+        return name +", "+months+"\n";
     }
 }

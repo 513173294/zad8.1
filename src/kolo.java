@@ -1,27 +1,42 @@
-import java.awt.image.Kernel;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class kolo {
     public static void main(String[] args) {
 
-        Karnet marek = new Karnet("Marek,", 3);
         Karnet[] karnet = new Karnet[3];
+
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 0; i < karnet.length; i++) {
+        for (int i = 0; i < karnet.length; ) {
 
             System.out.println("podaj imie");
             String imie = scanner.nextLine();
             System.out.println("podaj wiek");
             int age = scanner.nextInt();
             scanner.nextLine();
-            karnet[i] = new Karnet(imie, age);
 
+            Karnet karnetToAdd = new Karnet(imie, age);
+            boolean exist = false;
+
+            for(int j = 0; j < i; j++) {
+                String obj1 = karnet[j].toString();
+                String obj2 = karnetToAdd.toString();
+
+                if(obj1.equals(obj2)) {
+                    exist = true;
+                    System.out.println("taki element juz istnieje");
+                    i--;
+                    break;
+                }
             }
-            System.out.println(Arrays.toString(karnet));
 
+
+            if (!exist)
+                karnet[i] = karnetToAdd;
+            i++;
         }
 
-
+        System.out.println(Arrays.toString(karnet));
     }
+}
