@@ -2,11 +2,11 @@
 
 public class Karnet {
     String name;
-    int months;
+    int age;
 
     public Karnet(String name, int months) {
         this.name = name;
-        this.months = months;
+        this.age = months;
     }
 
     public String getName() {
@@ -17,12 +17,12 @@ public class Karnet {
         this.name = name;
     }
 
-    public int getMonths() {
-        return months;
+    public int getAge() {
+        return age;
     }
 
-    public void setMonths(int months) {
-        this.months = months;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     @Override
@@ -36,16 +36,16 @@ public class Karnet {
         Karnet other = (Karnet) obj;
         if (name != other.name)
             return false;
-        if (name != other.name)
+        if (age != other.age)
             return false;
-        if (months != other.months)
-            return false;
+//        if (name != other.name)
+//            return false;
         return true;
 
     }
     int i = 0;
     @Override
     public String toString() {
-        return name +", "+months+"\n";
+        return name +", "+ age +"\n";
     }
 }
