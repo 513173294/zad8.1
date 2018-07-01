@@ -20,10 +20,10 @@ public class kolo {
             boolean exist = false;
 
             for(int j = 0; j < i; j++) {
-                String obj1 = karnet[j].toString();
-                String obj2 = karnetToAdd.toString();
+//                String obj1 = karnet[j].toString();
+//                String obj2 = karnetToAdd.toString();
 
-                if(obj1.equals(obj2)) {
+                if(karnet[j].equals(karnetToAdd)) {
                     exist = true;
                     System.out.println("taki element juz istnieje");
                     i--;

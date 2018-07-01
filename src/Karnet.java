@@ -1,4 +1,4 @@
-
+import java.util.Objects;
 
 public class Karnet {
     String name;
@@ -26,26 +26,25 @@ public class Karnet {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (!(obj instanceof Karnet))
-            return false;
-        Karnet other = (Karnet) obj;
-        if (name != other.name)
-            return false;
-        if (age != other.age)
-            return false;
-//        if (name != other.name)
-//            return false;
-        return true;
-
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Karnet karnet = (Karnet) o;
+        return age == karnet.age &&
+                Objects.equals(name, karnet.name);
     }
-    int i = 0;
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(name, age);
+    }
+
     @Override
     public String toString() {
-        return name +", "+ age +"\n";
+        return "Karnet{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
